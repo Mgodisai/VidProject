@@ -31,16 +31,19 @@
             this.tbxMain = new System.Windows.Forms.TextBox();
             this.btnGo = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.lblMessage = new System.Windows.Forms.Label();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tbxMain
             // 
-            this.tbxMain.Location = new System.Drawing.Point(98, 64);
+            this.tbxMain.Location = new System.Drawing.Point(98, 43);
             this.tbxMain.Multiline = true;
             this.tbxMain.Name = "tbxMain";
+            this.tbxMain.ReadOnly = true;
             this.tbxMain.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbxMain.Size = new System.Drawing.Size(256, 137);
+            this.tbxMain.Size = new System.Drawing.Size(256, 187);
             this.tbxMain.TabIndex = 0;
             // 
             // btnGo
@@ -63,27 +66,50 @@
             this.btnStop.UseVisualStyleBackColor = true;
             this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
             // 
-            // button1
+            // lblMessage
             // 
-            this.button1.Location = new System.Drawing.Point(189, 323);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.lblMessage.AutoSize = true;
+            this.lblMessage.Location = new System.Drawing.Point(104, 25);
+            this.lblMessage.Name = "lblMessage";
+            this.lblMessage.Size = new System.Drawing.Size(94, 15);
+            this.lblMessage.TabIndex = 3;
+            this.lblMessage.Text = "placeholder_text";
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(189, 236);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.TabIndex = 4;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(189, 283);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 5;
+            this.btnSave.Text = "Save to File";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(474, 337);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.lblMessage);
             this.Controls.Add(this.btnStop);
             this.Controls.Add(this.btnGo);
             this.Controls.Add(this.tbxMain);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Videoton tesztfeladat";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -94,6 +120,8 @@
         private System.Windows.Forms.TextBox tbxMain;
         private System.Windows.Forms.Button btnGo;
         private System.Windows.Forms.Button btnStop;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblMessage;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnSave;
     }
 }
