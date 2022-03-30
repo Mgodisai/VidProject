@@ -3,7 +3,6 @@ using System.Drawing;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using GetID;
 
 namespace VidProject
 {
@@ -11,7 +10,7 @@ namespace VidProject
     {
         // constant and static fields
         private const string strRegexID = "^[A-Z][0-9]{4}$";
-        private const string csvFileName = "ment.csv";
+        private const string csvFileName = "savedData.csv";
         private static readonly Color errorColor = Color.Red;
         private static readonly Color normalColor = Color.Black;
         private static readonly Color warningColor = Color.Blue;
