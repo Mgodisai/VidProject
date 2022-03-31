@@ -54,9 +54,24 @@ namespace VidProject
                     tbxMain.AppendText(Environment.NewLine);
                 }
                 tbxMain.AppendText(id[0] + " - " + id[1]);
-                csvFileWriter.WriteFile(id, true);
                 // received new id therefore not all data are saved
                 isAllSaved = false;
+                try
+                {
+                    csvFileWriter.WriteFile(id, true);
+                } 
+                catch (IOException ex)
+                {
+                    SetLblMessageTextWithColoring("IOError during csv writing: " 
+                        +Environment.NewLine
+                        + ex.Message, errorColor);
+                }
+                catch (Exception ex)
+                {
+                    SetLblMessageTextWithColoring("Error during csv writing: " 
+                        + Environment.NewLine
+                        + ex.Message, errorColor);
+                }
             });
         }
 
@@ -179,9 +194,18 @@ namespace VidProject
                     IStoreData txtFileWriter = new StoreDataToTxt(sfd.FileName);
                     txtFileWriter.WriteFile(tbxMain.Lines, false);                           
                 }
+                catch (IOException ex)
+                {
+                    SetLblMessageTextWithColoring("IOError during txt writing: "
+                        +Environment.NewLine
+                        +ex.Message, errorColor);
+                    return false;
+                }
                 catch (Exception ex)
                 {
-                    SetLblMessageTextWithColoring("Error during writing: "+ex.Message, errorColor);
+                    SetLblMessageTextWithColoring("Error during txt writing: " 
+                        + Environment.NewLine
+                        + ex.Message, errorColor);
                     return false;
                 }
                 return true;
